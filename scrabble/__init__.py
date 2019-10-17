@@ -59,9 +59,9 @@ def rejects_non_letters_except_underscore():
 @check50.check(compiles)
 def computes_underscore_as_0():
     """Bonus: correctly calculates the score for "_" as 0"""
-    check50.run("./scrabble _").stdout("0 (includes blanks)").exit(0)
+    check50.run("./scrabble _").stdout("0 plus blanks").exit(0)
 
 @check50.check(compiles)
 def computes_king_with_underscore_as_8():
     """Bonus: correctly calculates the score for "k_ng" as 8"""
-    check50.run("./scrabble k_ng").stdout("8 (includes blanks)").exit(0)
+    check50.run("./scrabble k_ng").stdout("8 plus blanks").exit(0)
