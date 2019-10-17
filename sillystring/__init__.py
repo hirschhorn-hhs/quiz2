@@ -19,4 +19,4 @@ def converts_king_to_kInG():
 @check50.check(compiles)
 def converts_King_to_KiNg():
     """converts King to KiNg"""
-    check50.run("./sillystring King").stdout("KiNg").exit(0)
+    check50.run("./sillystring King").stdout("KaNg").exit(0)
