@@ -1,6 +1,1 @@
-check50:
-  checks:
-    converts king to kInG:
-      - run: ./sillystring king
-        stdout: kInG
-        exit: 0
+check50: true
