@@ -48,20 +48,20 @@ def computes_KING_as_9():
 
 @check50.check(compiles)
 def rejects_no_letters():
-    """Extra Credit: rejects "!2#4" entered at the command line with exit code 2"""
+    """Bonus: rejects "!2#4" entered at the command line with exit code 2"""
     check50.run("./scrabble !2#4").exit(2)
 
 @check50.check(compiles)
 def rejects_non_letters_except_underscore():
-    """Extra Credit: rejects "k1ng" entered at the command line with exit code 2"""
+    """Bonus: rejects "k1ng" entered at the command line with exit code 2"""
     check50.run("./scrabble k1ng").exit(2)
 
 @check50.check(compiles)
 def computes_underscore_as_0():
-    """Extra Credit: correctly calculates the score for "_" as 0"""
+    """Bonus: correctly calculates the score for "_" as 0"""
     check50.run("./scrabble _").stdout("0").exit(0)
 
 @check50.check(compiles)
 def computes_king_with_underscore_as_8():
-    """Extra Credit: correctly calculates the score for "k_ng" as 8"""
+    """Bonus: correctly calculates the score for "k_ng" as 8"""
     check50.run("./scrabble k_ng").stdout("8").exit(0)
