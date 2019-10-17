@@ -23,27 +23,27 @@ def rejects_2_args():
 
 @check50.check(compiles)
 def computes_a_as_1():
-    """correctly calculates the score for "a" as "0"""""
+    """correctly calculates the score for "a" as 1""""
     check50.run("./scrabble a").stdout("1").exit(0)
 
 @check50.check(compiles)
 def computes_A_as_1():
-    """correctly calculates the score for "A" as "0"""""
+    """correctly calculates the score for "A" as 1""""
     check50.run("./scrabble A").stdout("1").exit(0)
 
 @check50.check(compiles)
 def computes_king_as_9():
-    """correctly calculates the score for "king" as "9"""""
+    """correctly calculates the score for "king" as 9""""
     check50.run("./scrabble king").stdout("9").exit(0)
 
 @check50.check(compiles)
 def computes_King_as_9():
-    """correctly calculates the score for "King" as "9"""""
+    """correctly calculates the score for "King" as 9""""
     check50.run("./scrabble King").stdout("9").exit(0)
 
 @check50.check(compiles)
 def computes_KING_as_9():
-    """correctly calculates the score for "KING" as "9"""""
+    """correctly calculates the score for "KING" as 9""""
     check50.run("./scrabble KING").stdout("9").exit(0)
 
 @check50.check(compiles)
@@ -58,5 +58,5 @@ def rejects_non_letters_except_underscore():
 
 @check50.check(compiles)
 def computes_king_with_underscore_as_8():
-    """correctly calculates the score for "k_ng" as "8"""""
+    """correctly calculates the score for "k_ng" as 8""""
     check50.run("./scrabble k_ng").stdout("8").exit(0)
