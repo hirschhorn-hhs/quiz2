@@ -48,8 +48,8 @@ def computes_KING_as_9():
 
 @check50.check(compiles)
 def rejects_no_letters():
-    """Bonus: rejects "!2#4" entered at the command line with exit code 2"""
-    check50.run("./scrabble !2#4").exit(2)
+    """Bonus: rejects "12#$" entered at the command line with exit code 2"""
+    check50.run("./scrabble 12#$").exit(2)
 
 @check50.check(compiles)
 def rejects_non_letters_except_underscore():
