@@ -4,6 +4,10 @@ check50:
     - !require "brightness.c"
     - !require "beach.bmp"
     - !require "black.bmp"
+    - !require "blue.bmp"
+    - !require "dart.bmp"
+    - !require "night.bmp"
+    - !require "white.bmp"
 
 submit50:
   files: *check50_files
