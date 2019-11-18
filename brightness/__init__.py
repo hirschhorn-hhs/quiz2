@@ -22,6 +22,11 @@ def rejects_2_args():
     check50.run("./brightness").exit(1)
 
 @check50.check(compiles)
+def rejects_bad_file():
+    """rejects a bad filename entered at the command line with exit code 2"""
+    check50.run("./brightness test").exit(2)
+
+@check50.check(compiles)
 def calculates_black_as_0():
     """correctly calculates the brightness for black.bmp as 0"""
     check50.run("./brightness black.bmp").stdout("Brightness: 0", regex=False).exit(0)
