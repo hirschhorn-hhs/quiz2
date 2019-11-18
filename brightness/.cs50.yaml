@@ -1,7 +1,7 @@
 check50: 
   files: &check50_files
     - !exclude "*"
-    - !require brightness.c beach.bmp black.bmp blue.bmp dart.bmp night.bmp white.bmp
+    - !require brightness.c
 
 submit50:
   files: *check50_files
