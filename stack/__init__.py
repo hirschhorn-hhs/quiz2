@@ -18,4 +18,4 @@ def pushes_and_prints_one_email():
     expected = "-> Printing all emails from newest to oldest.\nHello, World"
     actual = check50.run("./stack").stdin("push").stdin("Hello, World").stdin("print").stdout()
     if not match(expected, actual):
-        raise check50.Mismatch("expected, actual, help=help)
+        raise check50.Mismatch(expected, actual)
