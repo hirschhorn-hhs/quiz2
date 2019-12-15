@@ -14,4 +14,7 @@ def compiles():
 @check50.check(compiles)
 def pushes_and_prints_one_email():
     """pushes and prints Hello, World email"""
-    check50.run("./stack").stdin("push").stdin("Hello, World").stdin("print").stdout("\n-> Printing all emails from newest to oldest.\nHello, World\nWhat would you like to do? (push, pop, print, quit) ")
+    expected = ""
+    actual = check50.run("./stack").stdin("push").stdin("Hello, World").stdin("print").stdout()
+    help = actual
+    raise check50.Mismatch(expected, actual, help=help)
