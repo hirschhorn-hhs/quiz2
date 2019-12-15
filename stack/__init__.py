@@ -15,6 +15,6 @@ def compiles():
 def pushes_and_prints_one_email():
     """pushes and prints Hello, World email"""
     expected = ""
-    actual = check50.run("./stack").stdin("push").stdin("Hello, World").stdin("print").stdin("quit").stdout()
+    actual = check50.run("./stack").stdin("push").stdin("Hello, World").stdin("print").stdout().stdin("quit")
     help = actual
     raise check50.Mismatch(expected, actual, help=help)
