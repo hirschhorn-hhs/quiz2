@@ -79,6 +79,6 @@ def pushes_2_pops_1_pushes_1_and_prints():
     """pushes 2 emails, pops 1 email, pushes another email, and then prints"""
     from re import match
     expected = "--> Printing all emails from newest to oldest.\nKbye\nOhai\n"
-    actual = check50.run("./stack").("push").stdin("Ohai").stdin("push").stdin("Rly").stdin("pop").stdin("push").stdin("Kbye").stdin("print").stdout()
+    actual = check50.run("./stack").stdin("push").stdin("Ohai").stdin("push").stdin("Rly").stdin("pop").stdin("push").stdin("Kbye").stdin("print").stdout()
     if not match(expected, actual):
         raise check50.Mismatch(expected, actual)
