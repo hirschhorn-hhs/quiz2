@@ -31,28 +31,28 @@ def raises_error_with_no_emails_2():
 
 @check50.check(compiles)
 def pushes_and_prints_one_email():
-    """pushes and prints email with 'Hello, World' as subject"""
+    """pushes and prints email with 'Hello, world' as subject"""
     from re import match
-    expected = "--> Printing all emails from newest to oldest.\nHello, World\n"
-    actual = check50.run("./stack").stdin("push").stdin("Hello, World").stdin("print").stdout()
+    expected = "--> Printing all emails from newest to oldest.\nHello, world\n"
+    actual = check50.run("./stack").stdin("push").stdin("Hello, world").stdin("print").stdout()
     if not match(expected, actual):
         raise check50.Mismatch(expected, actual)
  
 @check50.check(compiles)
 def pushes_and_prints_three_emails():
-    """pushes and prints emails with 'Hello, World', 'Are you there', and 'Seriously' as subjects"""
+    """pushes and prints emails with 'Hello, world', 'Are you there', and 'Seriously' as subjects"""
     from re import match
-    expected = "--> Printing all emails from newest to oldest.\nSeriously\nAre you there\nHello, World\n"
-    actual = check50.run("./stack").stdin("push").stdin("Hello, World").stdin("push").stdin("Are you there").stdin("push").stdin("Seriously").stdin("print").stdout()
+    expected = "--> Printing all emails from newest to oldest.\nSeriously\nAre you there\nHello, world\n"
+    actual = check50.run("./stack").stdin("push").stdin("Hello, world").stdin("push").stdin("Are you there").stdin("push").stdin("Seriously").stdin("print").stdout()
     if not match(expected, actual):
         raise check50.Mismatch(expected, actual)
 
 @check50.check(compiles)
 def pushes_and_prints_five_emails():
-    """pushes and prints emails with 'Hello, World', 'Are you there', 'Seriously', 'C'mon', and 'Sad face' as subjects"""
+    """pushes and prints emails with 'Hello, world', 'Are you there', 'Seriously', 'C'mon', and 'Sad face' as subjects"""
     from re import match
-    expected = "--> Printing all emails from newest to oldest.\nSad face\nC'mon\nSeriously\nAre you there\nHello, World\n"
-    actual = check50.run("./stack").stdin("push").stdin("Hello, World").stdin("push").stdin("Are you there").stdin("push").stdin("Seriously").stdin("push").stdin("C'mon").stdin("push").stdin("Sad face").stdin("print").stdout()
+    expected = "--> Printing all emails from newest to oldest.\nSad face\nC'mon\nSeriously\nAre you there\nHello, world\n"
+    actual = check50.run("./stack").stdin("push").stdin("Hello, world").stdin("push").stdin("Are you there").stdin("push").stdin("Seriously").stdin("push").stdin("C'mon").stdin("push").stdin("Sad face").stdin("print").stdout()
     if not match(expected, actual):
         raise check50.Mismatch(expected, actual)
 
