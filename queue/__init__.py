@@ -91,3 +91,8 @@ def fresh_baked_cookies():
     actual = check50.run("./queue").stdin("e").stdin("101").stdin("e").stdin("102").stdin("e").stdin("103").stdin("e").stdin("104").stdin("e").stdin("105").stdin("e").stdin("106").stdin("e").stdin("107").stdin("e").stdin("108").stdin("e").stdin("109").stdin("e").stdin("110").stdin("d").stdin("d").stdin("d").stdin("d").stdin("d").stdin("d").stdin("d").stdin("d").stdin("d").stdin("d").stdin("p").stdout()
     if not match(expected, actual):
         raise check50.Mismatch(expected, actual)
+
+@check50.check(enqueues_and_prints_fiver_order_numbers)
+def memory():
+    """program is free of memory errors"""
+    check50.c.valgrind("./queue").stdin("e").stdin("1").stdin("e").stdin("2").stdin("e").stdin("3").stdin("e").stdin("4").stdin("e").stdin("5").stdin("p").stdout()
