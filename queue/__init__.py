@@ -49,10 +49,10 @@ def enqueues_and_prints_three_order_numbers():
 
 @check50.check(compiles)
 def enqueues_and_prints_fiver_order_numbers():
-    """enqueues and prints order numbers 1, 2, 3, 4, 5, and 6"""
+    """enqueues and prints order numbers 1, 2, 3, 4, and 5"""
     from re import match
     expected = "--> Printing all order numbers from oldest to newest.\nOrder #1\nOrder #2\nOrder #3\nOrder #4\nOrder #5\nOrder #6\n"
-    actual = check50.run("./queue").stdin("e").stdin("1").stdin("e").stdin("2").stdin("e").stdin("3").stdin("e").stdin("4").stdin("e").stdin("5").stdin("e").stdin("6").stdin("p").stdout()
+    actual = check50.run("./queue").stdin("e").stdin("1").stdin("e").stdin("2").stdin("e").stdin("3").stdin("e").stdin("4").stdin("e").stdin("5").stdin("p").stdout()
     if not match(expected, actual):
         raise check50.Mismatch(expected, actual)
 
@@ -71,5 +71,14 @@ def enqueues_2_dequeues_1_enqueues_1_and_prints():
     from re import match
     expected = "--> Printing all order numbers from oldest to newest.\nOrder #2\nOrder #3\n"
     actual = check50.run("./queue").stdin("e").stdin("1").stdin("e").stdin("2").stdin("d").stdin("e").stdin("3").stdin("p").stdout()
+    if not match(expected, actual):
+        raise check50.Mismatch(expected, actual)
+
+@check50.check(compiles)
+def fresh_baked_cookies():
+    """handles a rush of orders for fresh baked cookies by enqueueing the all then dequeueing them all"""
+    from re import match
+    expected = "--> Printing all order numbers from oldest to newest.\nError: List of order numbers is empty.\n"
+    actual = check50.run("./queue").stdin("e").stdin("101").stdin("e").stdin("102").stdin("e").stdin("103").stdin("e").stdin("104").stdin("e").stdin("105").stdin("e").stdin("106").stdin("e").stdin("107").stdin("e").stdin("108").stdin("e").stdin("109").stdin("e").stdin("110").stdin("d").stdin("d").stdin("d").stdin("d").stdin("d").stdin("d").stdin("d").stdin("d").stdin("d").stdin("d").stdin("p").stdout()
     if not match(expected, actual):
         raise check50.Mismatch(expected, actual)
