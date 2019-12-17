@@ -30,6 +30,15 @@ def raises_error_with_no_order_numbers_2():
         raise check50.Mismatch(expected, actual)
 
 @check50.check(compiles)
+def rejects_negative_order_numbers():
+    """does not enqueue a negative order number"""
+    from re import match
+    expected = "--> Printing all order numbers from oldest to newest.\nOrder #1.\n"
+    actual = check50.run("./queue").stdin("e").stdin("-1").stdin("1").stdin("p").stdout()
+    if not match(expected, actual):
+        raise check50.Mismatch(expected, actual)
+
+@check50.check(compiles)
 def enqueues_and_prints_one_order_number():
     """enqueues and prints order number 1"""
     from re import match
@@ -51,7 +60,7 @@ def enqueues_and_prints_three_order_numbers():
 def enqueues_and_prints_fiver_order_numbers():
     """enqueues and prints order numbers 1, 2, 3, 4, and 5"""
     from re import match
-    expected = "--> Printing all order numbers from oldest to newest.\nOrder #1\nOrder #2\nOrder #3\nOrder #4\nOrder #5\nOrder #6\n"
+    expected = "--> Printing all order numbers from oldest to newest.\nOrder #1\nOrder #2\nOrder #3\nOrder #4\nOrder #5\n"
     actual = check50.run("./queue").stdin("e").stdin("1").stdin("e").stdin("2").stdin("e").stdin("3").stdin("e").stdin("4").stdin("e").stdin("5").stdin("p").stdout()
     if not match(expected, actual):
         raise check50.Mismatch(expected, actual)
