@@ -33,7 +33,7 @@ def raises_error_with_no_order_numbers_2():
 def rejects_negative_order_numbers():
     """does not enqueue a negative order number"""
     from re import match
-    expected = "--> Printing all order numbers from oldest to newest.\nOrder #1.\n"
+    expected = "--> Printing all order numbers from oldest to newest.\nOrder #1\n"
     actual = check50.run("./queue").stdin("e").stdin("-1").stdin("1").stdin("p").stdout()
     if not match(expected, actual):
         raise check50.Mismatch(expected, actual)
