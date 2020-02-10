@@ -17,7 +17,7 @@ def rejects_2_args():
 
 @check50.check(exists)
 def rejects_bad_arg():
-    """rejects argument that's not a .csv file with exit code 2"""
+    """rejects an argument that's not a .csv file with exit code 2"""
     check50.run("python3 iowa.py foo").exit(2)
 
 @check50.check(exists)
