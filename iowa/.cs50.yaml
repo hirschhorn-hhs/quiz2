@@ -1,0 +1,11 @@
+check50: 
+  files: &check50_files
+    - !exclude "*"
+    - !require "a.csv"
+    - !require "b.csv"
+    - !require "c.csv"
+    - !require "d.csv"
+    - !require "iowa.py"
+
+submit50:
+  files: *check50_files
