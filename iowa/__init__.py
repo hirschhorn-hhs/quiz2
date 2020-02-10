@@ -33,12 +33,12 @@ def interprets_b():
 @check50.check(exists)
 def interprets_c():
     """correctly interprets the results from County C with 20 county delegates and 4 state delegates"""
-    check50.run("python3 iowa.py b.csv").stdin("20").stdin("4").stdout("SDEs for Biden: 0.80\nSDEs for Klobuchar: 1.60\nSDEs for Warren: 1.60").exit()
+    check50.run("python3 iowa.py c.csv").stdin("20").stdin("4").stdout("SDEs for Biden: 0.80\nSDEs for Klobuchar: 1.60\nSDEs for Warren: 1.60").exit()
 
 @check50.check(exists)
 def interprets_d():
     """correctly interprets the results from County D with 15 county delegates and 3 state delegates"""
-    check50.run("python3 iowa.py b.csv").stdin("15").stdin("3").stdout("SDEs for Buttigieg: 1.20\nSDEs for Sanders: 1.00\nSDEs for Warren: 0.80").exit()
+    check50.run("python3 iowa.py d.csv").stdin("15").stdin("3").stdout("SDEs for Buttigieg: 1.20\nSDEs for Sanders: 1.00\nSDEs for Warren: 0.80").exit()
 
 @check50.check(exists)
 def positive_int_county():
