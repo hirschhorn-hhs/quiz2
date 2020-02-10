@@ -19,3 +19,8 @@ def rejects_2_args():
 def rejects_bad_arg():
     """rejects argument that's not a .csv file with exit code 2"""
     check50.run("python3 iowa.py foo").exit(2)
+
+@check50.check(exists)
+def first_and_second_do_not_match():
+    """first and second round counts do not match"""
+    check50.run("python3 iowa.py a.csv").exit(3)
