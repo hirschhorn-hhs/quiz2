@@ -48,4 +48,4 @@ def positive_int_county():
 @check50.check(exists)
 def positive_int_state():
     """only accepts a positive integer from the user for the number of total state delegates"""
-    check50.run("python3 iowa.py b.csv").stdin("10").stdin("0").stdin("1").stdout("SDEs for Buttigieg: 0.50\nSDEs for Sanders: 0.50").exit()
+    check50.run("python3 iowa.py b.csv").stdin("10").stdin("-1").stdin("0").stdin("1").stdout("SDEs for Buttigieg: 0.50\nSDEs for Sanders: 0.50").exit()
