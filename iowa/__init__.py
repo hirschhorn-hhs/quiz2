@@ -23,7 +23,7 @@ def rejects_bad_arg():
 @check50.check(exists)
 def first_and_second_do_not_match():
     """first and second round counts do not match"""
-    check50.run("python3 iowa.py a.csv").exit(3, timeout=5)
+    check50.run("python3 iowa.py a.csv").exit(3)
 
 @check50.check(exists)
 def interprets_b():
