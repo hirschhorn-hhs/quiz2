@@ -35,3 +35,18 @@ def cost_of_12_point_34_oz_envelope():
 def cost_of_13_oz_envelope():
     """calculates the cost of a 13 oz large envelope as $3.40"""
     check50.run("./mail").stdin("13").stdout("$3.40", regex=False).exit(0)
+
+@check50.check(compiles)
+def cost_of_over_weight_envelope():
+    """notifies user of an envelope that is over allowed weight"""
+    check50.run("./mail").stdin("13.01").stdout("Over allowed weight.", regex=False).exit(0)
+
+@check50.check(compiles)
+def reprompts_negative_weight():
+    """reprompts the user if a negative weight is entered"""
+    check50.run("./mail").stdin("-1").stdin("1").stdout("$1.00", regex=False).exit(0)
+
+@check50.check(compiles)
+def reprompts_zero_weight():
+    """reprompts the user if a weight of 0 oz is entered"""
+    check50.run("./mail").stdin("0").stdin("1").stdout("$1.00", regex=False).exit(0)
