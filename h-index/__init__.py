@@ -19,4 +19,19 @@ def reprompts_for_bad_input():
 @check50.check(compiles)
 def h_index_0():
     """correctly calcualtes an h-index of 0 for 1 paper with 0 citations"""
-    check50.run("./h-index").stdin("1").stdin("Paper 0").stdin("0").stdout("H-index: 0", regex=False).exit(0)
+    check50.run("./h-index").stdin("1").stdin("Paper 1").stdin("0").stdout("H-index: 0", regex=False).exit(0)
+
+@check50.check(compiles)
+def h_index_0():
+    """correctly calcualtes an h-index of 1 for 1 paper with 1 citation"""
+    check50.run("./h-index").stdin("1").stdin("Paper 1").stdin("1").stdout("H-index: 1", regex=False).exit(0)
+
+@check50.check(compiles)
+def h_index_0():
+    """correctly calcualtes an h-index of 1 for 1 paper with 2 citations"""
+    check50.run("./h-index").stdin("1").stdin("Paper 1").stdin("2").stdout("H-index: 1", regex=False).exit(0)
+
+@check50.check(compiles)
+def h_index_0():
+    """correctly calcualtes an h-index of 7 for 10 papers"""
+    check50.run("./h-index").stdin("10").stdin("Paper 1").stdin("50").stdin("Paper 2").stdin("40").stdin("Paper 3").stdin("33").stdin("Paper 4").stdin("23").stdin("Paper 5").stdin("12").stdin("Paper 6").stdin("11").stdin("Paper 7").stdin("8").stdin("Paper 8").stdin("5").stdin("Paper 9").stdin("1").stdin("Paper 10").stdin("0").stdout("H-index: 7", regex=False).exit(0)
