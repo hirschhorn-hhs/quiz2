@@ -14,4 +14,4 @@ def compiles():
 @check50.check(compiles)
 def reprompts_for_bad_input():
     """reprompts the user when an invalid number of papers is entered"""
-    check50.run("./h-index").stdin("-1").stdin("0").stdin.("21").reject()
+    check50.run("./h-index").stdin("-1").stdin("0").stdin("21").reject()
