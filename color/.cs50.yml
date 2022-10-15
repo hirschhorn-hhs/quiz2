@@ -1,0 +1,4 @@
+check50: true
+  files:
+    - !exclude "*"
+    - !require "color.c"
