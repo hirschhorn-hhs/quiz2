@@ -13,5 +13,5 @@ def compiles():
 
 @check50.check(compiles)
 def decrypt_message():
-    """decrypts the message Czggj! Ocdn xjgjm: W,u,R"""
-    check50.run("./decryption").stdin("Czggj! Ocdn xjgjm: W,u,R").stdout("Hello! This color: B,z,W", regex=False).exit(0)
+    """decrypts the message Fg, dpgclb! Ucyp rfgq amjmp qfgpr: 8-B"""
+    check50.run("./decryption").stdin("Fg, dpgclb! Ucyp rfgq amjmp qfgpr: 8-B").stdout("Hi, friend! Wear this color shirt: 8-D", regex=False).exit(0)
